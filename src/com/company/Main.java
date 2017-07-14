@@ -34,6 +34,25 @@ public class Main {
             System.out.println(name);
         }
 
+        Converter<String, Integer> converter = (from) -> Integer.valueOf(from);
+        /*can use this form as well*/
+        //Converter<String, Integer> converter = Integer::valueOf;
+        Integer convertd = converter.convert("123");
+        System.out.println(convertd);
+
+        Something something = new Something();
+        Converter<String, String> converterd = something::startWith;
+        String convert = converterd.convert("Java");
+        System.out.println(convert);
+
+        PersonFactory<Person> personFactory = Person::new;
+        Person person = personFactory.create("Peter", "Parker");
+
+        int num = 1;
+        Converter<Integer, String> stringConverter = from -> String.valueOf(from + num);
+        System.out.println(stringConverter.convert(2));
+
+
 
     }
 }
