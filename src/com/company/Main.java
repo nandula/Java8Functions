@@ -45,5 +45,14 @@ public class Main {
         String convert = converterd.convert("Java");
         System.out.println(convert);
 
+        PersonFactory<Person> personFactory = Person::new;
+        Person person = personFactory.create("Peter", "Parker");
+
+        int num = 1;
+        Converter<Integer, String> stringConverter = from -> String.valueOf(from + num);
+        System.out.println(stringConverter.convert(2));
+
+
+
     }
 }
