@@ -52,6 +52,11 @@ public class Main {
         Converter<Integer, String> stringConverter = from -> String.valueOf(from + num);
         System.out.println(stringConverter.convert(2));
 
+        BuiltIn builtIn = new BuiltIn();
+        builtIn.runFunctions();
+
+        Streams streams = new Streams();
+        streams.addObjects();
 
 
     }
