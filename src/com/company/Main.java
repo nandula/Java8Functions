@@ -13,8 +13,8 @@ public class Main {
             }
         };
 
-        System.out.println(formula.sqrt(16));
-        System.out.println(formula.calaculte(225));
+        //System.out.println(formula.sqrt(16));
+        //System.out.println(formula.calaculte(225));
 
         List<String> names = Arrays.asList("peter", "anne", "mike", "xenia");
         //without lambda
@@ -31,27 +31,35 @@ public class Main {
         Collections.sort(names, (a, b) -> b.compareTo(a));
 
         for (String name : names) {
-            System.out.println(name);
+            //  System.out.println(name);
         }
 
         Converter<String, Integer> converter = (from) -> Integer.valueOf(from);
         /*can use this form as well*/
         //Converter<String, Integer> converter = Integer::valueOf;
         Integer convertd = converter.convert("123");
-        System.out.println(convertd);
+        //System.out.println(convertd);
 
         Something something = new Something();
         Converter<String, String> converterd = something::startWith;
         String convert = converterd.convert("Java");
-        System.out.println(convert);
+        //System.out.println(convert);
 
         PersonFactory<Person> personFactory = Person::new;
         Person person = personFactory.create("Peter", "Parker");
 
         int num = 1;
         Converter<Integer, String> stringConverter = from -> String.valueOf(from + num);
-        System.out.println(stringConverter.convert(2));
+//        System.out.println(stringConverter.convert(2));
 
+        BuiltIn builtIn = new BuiltIn();
+        //  builtIn.runFunctions();
+
+        Streams streams = new Streams();
+        // streams.addObjects();
+
+        ParallelStream parallelStream = new ParallelStream();
+        parallelStream.addStream();
 
 
     }
